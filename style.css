@@ -1,0 +1,216 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html , body{
+    height: 100%;
+    width: 100%;
+}
+body{
+  height: 100%;
+  width: 100%;
+  background: #1d1e20;
+}
+.main {
+  height: 100%;
+  width: 100%;
+  position: relative;
+  font-family: sans-serif;
+}
+.leftsection {
+  width: 260px;
+  height: 100%;
+  position: fixed;
+  left: 0;
+  top: 0;
+  background: rgb(0, 0, 0);
+  color: white;
+  padding: 1rem;
+  overflow-y: auto;
+}
+body.light-mode .leftsection {
+  background: #f1f1f1;
+  color: #000000;
+}
+.layerstitle {
+  margin-bottom: 1rem;
+  font-size: 1.1rem;
+  border-bottom: 1px solid #444;
+  padding-bottom: 0.5rem;
+}
+.layerslist {
+  list-style: none;
+  padding: 0;
+}
+.layerslist li {
+  padding: 8px 10px;
+  margin-bottom: 6px;
+  background: #2a2a2a;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+}
+.layerslist li.active {
+  background: #00fff2;
+  color: black;
+}
+.content {
+  height: 100%;
+  width: 60%;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #232323;
+  overflow: auto;
+}
+.toggle .toggleicon{
+  font-size: 3rem;
+  background-color: transparent;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+body.light-mode {
+  background: #fff4f4;
+  color: #000000;
+}
+body.light-mode .content {
+  background: #d2d2d2;
+}
+body.light-mode .icon {
+  color: #000000;
+}
+body.light-mode .rectangleshape {
+  background-color: #ffffff;
+  border: 2px solid rgb(255, 0, 0);
+}
+body.light-mode .textshape,
+body.light-mode textarea {
+  background: #ffffff;
+  color: #000000;
+  border: 1px solid #ff0000;
+}
+.toggleicon {
+  font-size: 3rem;
+  background-color: transparent;
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+body.light-mode .toggleicon {
+  color: black;
+  transform: rotate(180deg);
+}
+.rightsection {
+  width: 260px;
+  height: 100%;
+  position: fixed;
+  right: 0;
+  top: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  padding: 1.5rem;
+  background: rgb(0, 0, 0);
+}
+body.light-mode .rightsection {
+  background: #f1f1f1;
+  color: #000000;
+}
+body.light-mode .layerslist li {
+  background: #ffffff;
+  color: #000000;
+}
+body.light-mode .layerslist li.active {
+  background: #00fff2;
+  color: #000000;
+}
+.colorpicker {
+  display: flex;
+  justify-content: center;
+  border: none;
+}
+.colorpicker input {
+  width: 200px;
+  height: 30px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.btns{
+  position: absolute;
+  display: flex;
+  gap: 1rem;
+  bottom: 1rem;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: rgba(128, 128, 128, 0.447);
+  box-shadow: 0 0 10px white;
+  backdrop-filter: blur(5px);
+  padding: 5px 10px;
+  border: 1px solid grey;
+  border-radius: 10px;
+}
+.icon{
+  font-size: 1rem;
+  background-color: transparent;
+  border: none;
+  color: white;
+  cursor: pointer;
+  transition: all 0.3s linear;
+}
+.icon:hover{
+  transform: scale(1.25) translateY(-20%);
+}
+.btns .rectangle{
+  font-size: 1.75rem;
+}
+.btns .text{
+  font-size: 1.75rem;
+}
+.icon.active {
+  background-color: rgb(1, 255, 238);
+  border-radius: 6px;
+  padding: 6px 8px;
+}
+.rectangleshape{
+  height: 100px;
+  width: 200px;
+  background-color: #e3e0e0;
+  position: absolute;
+  top: 50px;
+  left: 50px;
+}
+.rectangleshape.selected {
+  outline: 2px solid #ffffff;
+  outline-offset: 2px;
+}
+.resizerect {
+  width: 10px;
+  height: 10px;
+  background: white;
+  position: absolute;
+  right: -5px;
+  bottom: -5px;
+  cursor: nwse-resize;
+}
+.textshape.selected {
+  outline: 1px dashed cyan;
+}
+.textarea {
+  position: absolute;
+  background: #f0f0f0;
+  color: rgb(0, 0, 0);
+  border: 1px solid cyan;
+  outline: none;
+  padding: 8px;
+  font-size: 16px;
+  resize: both;
+  cursor: move;
+}
+.textarea.dragging {
+  user-select: none;
+  cursor: move;
+}
