@@ -214,3 +214,58 @@ body.light-mode .layerslist li.active {
   user-select: none;
   cursor: move;
 }
+
+@media (max-width: 1024px) {
+  .leftsection,
+  .rightsection {
+    width: 220px;
+  }
+
+  .content {
+    width: calc(100% - 440px);
+    left: 220px;
+    transform: none;
+  }
+}
+
+@media (max-width: 768px) {
+
+  /* Hide side panels */
+  .leftsection,
+  .rightsection {
+    display: none;
+  }
+
+  .content {
+    width: 100%;
+    left: 0;
+    transform: none;
+  }
+
+  .btns {
+    gap: 0.5rem;
+    padding: 6px 8px;
+  }
+
+  .icon {
+    font-size: 0.9rem;
+  }
+
+  .btns .rectangle,
+  .btns .text {
+    font-size: 1.4rem;
+  }
+
+  .textarea {
+    font-size: 18px;
+    min-width: 120px;
+    min-height: 60px;
+  }
+
+  .resizerect {
+    width: 14px;
+    height: 14px;
+    right: -7px;
+    bottom: -7px;
+  }
+}
